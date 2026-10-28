@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Phiếu Buổi 1 · 我們這一班</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=LXGW+WenKai+TC:wght@400;700&display=swap">
+</head><body>
+<style>
+/* Layout: phone-first workbook — sticky header with section chips, one section per screen, prev/next at the bottom.
+   Light-only to match the classroom deck. */
+:root{
+  color-scheme:light;
+  --paper:#FBFAF6; --card:#FFFFFF; --ink:#1B2430; --muted:#5E6B78; --line:#DCDDD5;
+  --red:#C8321E; --red-t:#FBE9E5; --blue:#1F5FA8; --blue-t:#E6EFF9; --gold:#E2A21B; --gold-t:#FDF3DC; --green:#22845B; --green-t:#E2F3EA;
+  --f-ui:"Be Vietnam Pro","Noto Sans TC",system-ui,sans-serif;
+  --f-zh:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --f-kai:"LXGW WenKai TC","BiauKai","DFKai-SB","Noto Sans TC",serif;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-ui);font-size:16px;line-height:1.5;margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--ink)}
+.zh{font-family:var(--f-zh)}
+h1,h2,h3{margin:0;text-wrap:balance}
+button{font:inherit;color:inherit;cursor:pointer}
+input,select,textarea{font:inherit;color:var(--ink);background:#FFFCF0;border:2px solid #A9AFA3;border-radius:10px;padding:10px 12px;width:100%;min-width:0;min-height:46px}
+input::placeholder,textarea::placeholder{color:#9AA19A;font-family:var(--f-ui);font-size:14px}
+input[type=checkbox]{min-height:0}
+textarea{resize:vertical;min-height:70px}
+input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:1px}
+[hidden]{display:none!important}
+
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--ink);color:#fff}
+.top .in{max-width:760px;margin:0 auto;padding:10px max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px));display:grid;gap:8px}
+.top .t{display:flex;align-items:baseline;gap:10px}
+.top .t b{font-family:var(--f-kai);font-size:22px}
+.top .t span{font-size:13px;opacity:.8;margin-left:auto;font-variant-numeric:tabular-nums}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips button{flex:none;border:0;border-radius:999px;padding:5px 11px;font-size:13px;font-weight:700;background:rgba(255,255,255,.14);color:#fff;white-space:nowrap}
+.chips button[aria-current="true"]{background:var(--gold);color:var(--ink)}
+.chips button.done::after{content:" ✓";color:#7EE0B0}
+.chips button[aria-current="true"].done::after{color:var(--green)}
+
+main{max-width:760px;margin:0 auto;padding:16px max(16px,env(safe-area-inset-right,0px)) 110px max(16px,env(safe-area-inset-left,0px))}
+.sec{display:grid;gap:14px}
+.sec-h{display:grid;gap:4px}
+.sec-h .k{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px;font-weight:700;color:var(--muted)}
+.tag{display:inline-block;border-radius:6px;padding:2px 8px;font-weight:700;font-size:12px}
+.tag.y{background:var(--gold-t);color:#7A5300}.tag.b{background:var(--blue-t);color:var(--blue)}.tag.g{background:var(--green-t);color:var(--green)}.tag.r{background:var(--red-t);color:var(--red)}
+.sec-h h2{font-size:22px}
+.sec-h p{margin:0;color:var(--muted);font-size:15px}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:10px;min-width:0}
+.hand{border:2px dashed var(--gold);background:var(--gold-t)}
+.hand .big{font-size:18px;font-weight:800;color:#7A5300}
+.q{font-family:var(--f-zh);font-size:18px;line-height:1.5}
+.q small{display:block;font-family:var(--f-ui);font-size:13px;color:var(--muted)}
+.field{display:grid;gap:4px}
+.field label{font-size:13px;font-weight:600;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:10px}
+.zhin{font-family:var(--f-zh);font-size:17px}
+
+/* vocab list */
+.vl{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,150px),1fr));gap:8px}
+.vl div{border:1.5px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--card)}
+.vl b{display:block;color:var(--blue);font-size:16px}
+.vl span{font-size:14px;color:var(--muted)}
+.vl i{font-style:normal;font-size:12px;color:var(--muted);float:right}
+
+/* fill A */
+.fill{font-family:var(--f-zh);font-size:18px;line-height:2}
+.fill select{width:auto;display:inline-block;font-family:var(--f-zh);font-size:17px;padding:4px 6px;margin:0 3px}
+.fill .mark{font-weight:800;margin-left:6px}
+.ok{color:var(--green)} .no{color:var(--red)}
+.bank{font-family:var(--f-zh);font-size:17px;font-weight:700;text-align:center;background:var(--blue-t);border-radius:10px;padding:8px}
+
+/* ticks */
+.ticks{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.ticks button{border:1.5px solid var(--line);background:var(--card);border-radius:10px;padding:8px 0;display:grid;gap:0;font-weight:800}
+.ticks button small{font-size:12px;color:var(--muted);font-weight:600}
+.ticks button.y{background:var(--green-t);border-color:var(--green);color:var(--green)}
+.ticks button.n{background:var(--red-t);border-color:var(--red);color:var(--red)}
+
+/* scale */
+.scale-k{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;font-size:12px;text-align:center}
+.scale-k div{background:var(--card);border:1.5px solid var(--line);border-radius:8px;padding:4px 2px}
+.scale-k b{display:block;font-size:15px}
+.scale-k span{font-family:var(--f-zh);font-weight:700}
+.srow{display:grid;gap:6px;padding:8px 0;border-bottom:1px solid var(--line)}
+.srow:last-child{border-bottom:0}
+.pills{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.pills button{border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:6px 0;font-weight:800}
+.pills button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+
+/* topics */
+.topics{display:grid;gap:6px}
+.topics button{text-align:left;border:1.5px solid var(--line);background:var(--card);border-radius:10px;padding:8px 12px;display:flex;gap:8px;align-items:baseline}
+.topics button b{font-family:var(--f-zh)}
+.topics button span{font-size:13px;color:var(--muted)}
+.topics button[aria-pressed="true"]{border-color:var(--blue);background:var(--blue-t)}
+
+/* bingo */
+.bgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;max-width:360px;margin:0 auto;width:100%}
+.bgrid button{aspect-ratio:1/1;max-width:100%;border:2px solid var(--line);background:var(--card);border-radius:12px;font-family:var(--f-zh);font-size:22px;font-weight:700}
+.bgrid button.empty{color:var(--muted);font-size:14px;font-family:var(--f-ui);font-weight:500}
+.bgrid button.hit{background:var(--gold-t);border-color:var(--gold)}
+.bgrid button.line{background:var(--green-t);border-color:var(--green)}
+.wpick{display:flex;flex-wrap:wrap;gap:6px}
+.wpick button{border:1.5px solid var(--line);background:var(--card);border-radius:8px;padding:4px 10px;font-family:var(--f-zh);font-size:17px}
+.wpick button:disabled{opacity:.35}
+.bingo-msg{text-align:center;font-family:var(--f-kai);font-size:34px;color:var(--green);font-weight:700}
+
+/* self assessment */
+.sa{display:grid;gap:8px}
+.sa .row{display:grid;gap:6px}
+.sa .opts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.sa .opts button{border:1.5px solid var(--line);background:var(--card);border-radius:10px;padding:6px 4px;font-size:13px;font-weight:700}
+.sa .opts button[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+
+.btn{border:0;border-radius:10px;padding:10px 16px;font-weight:700;background:var(--blue);color:#fff}
+.btn.ghost{background:transparent;border:1.5px solid var(--line);color:var(--ink)}
+.btn.red{background:var(--red)}
+.btn:disabled{opacity:.4;cursor:default}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.score{font-size:15px;font-weight:700}
+
+.bot{position:fixed;inset:auto 0 0;z-index:20;background:var(--card);border-top:1.5px solid var(--line)}
+.bot .in{max-width:760px;margin:0 auto;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 10px) max(16px,env(safe-area-inset-left,0px));display:flex;gap:8px;align-items:center}
+.bot .mid{flex:1;text-align:center;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.saved{font-size:12px;color:var(--green)}
+#out{font-family:var(--f-zh);font-size:14px;min-height:260px;white-space:pre}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header class="top"><div class="in">
+  <div class="t"><b>我們這一班</b><span id="prog"></span></div>
+  <nav class="chips" id="chips" aria-label="Các phần của phiếu"></nav>
+</div></header>
+
+<main id="main">
+
+<section class="sec" data-id="info" data-label="資料">
+  <div class="sec-h"><div class="k"><span class="tag b">Bắt đầu</span></div><h2>Phiếu học tập Buổi 1</h2>
+    <p>Làm từng phần theo slide của cô. Bài tự lưu trên máy này. Cuối buổi vào phần <b>Nộp bài</b> để sao chép kết quả gửi cô.</p></div>
+  <div class="card">
+    <div class="field"><label for="name">Họ tên</label><input id="name" data-k="name" autocomplete="name"></div>
+    <div class="grid2">
+      <div class="field"><label for="no">Số thứ tự</label><input id="no" data-k="no" type="number" inputmode="numeric" min="1" max="60"></div>
+      <div class="field"><label for="cls">Lớp</label><input id="cls" data-k="cls"></div>
+    </div>
+  </div>
+  <div class="card hand"><span class="big">✍ 3 phần viết vào tập</span>
+    <div>Đánh dấu ✍ là phần <b>viết tay vào tập</b>, không gõ trên web: <b>生詞</b> (chép chữ Hán), <b>C2 bước 2</b> (đoạn văn), <b>D1</b> (聽寫). Cuối buổi cô kiểm tra tập.</div></div>
+</section>
+
+<section class="sec" data-id="vocab" data-label="生詞 ✍" data-hand="1">
+  <div class="sec-h"><div class="k"><span class="tag y">Tiết 2</span><span class="tag r">✍ Viết vào tập</span></div><h2>20 từ A2 hôm nay</h2>
+    <p>Nhìn slide, tìm chữ Hán khớp với pinyin. Trong tập, mỗi từ viết <b>chữ Hán × 3 lần</b>, kèm pinyin.</p></div>
+  <div class="vl" id="vl"></div>
+  <label class="card" style="grid-template-columns:auto 1fr;align-items:center"><input type="checkbox" data-k="vocab_done" style="width:22px;height:22px"><span>Em đã chép xong 20 từ vào tập</span></label>
+</section>
+
+<section class="sec" data-id="K" data-label="K">
+  <div class="sec-h"><div class="k"><span class="tag g">Tiết 1</span><span>Không chấm</span></div><h2>K · 熱身 · 10 câu hỏi</h2><p>Nghe bạn trả lời, rồi gõ câu trả lời <b>của em</b>, viết đủ câu.</p></div>
+  <div class="card" id="K"></div>
+</section>
+
+<section class="sec" data-id="A" data-label="A">
+  <div class="sec-h"><div class="k"><span class="tag g">Tiết 1</span><span>2 điểm · tự chấm</span></div><h2>A · 聽一聽、填一填</h2><p>Nghe câu mẫu cô bật, chọn từ đúng. Mỗi từ dùng 1 lần, có 4 từ thừa. <b>Chỉ được kiểm tra 1 lần.</b></p></div>
+  <div class="bank">出生 · 母語 · 年紀 · 兄弟 · 害羞 · 害怕 · 擔心 · 從來 · 認真 · 開心 · 長大 · 半夜</div>
+  <div class="card" id="A"></div>
+  <div class="row"><button class="btn red" id="A-check">Kiểm tra phần A</button><span class="score" id="A-score"></span></div>
+</section>
+
+<section class="sec" data-id="B1" data-label="B1">
+  <div class="sec-h"><div class="k"><span class="tag y">Tiết 2</span><span>1,5 điểm · cô chấm</span></div><h2>B1 · 語法</h2><p>Mỗi phần 3 câu, gõ ngay sau khi cô dạy xong.</p></div>
+  <div class="card">
+    <h3>Phần 1 · V過 · Ai đứng đến cuối?</h3>
+    <p style="margin:0;font-size:14px;color:var(--muted)">Mỗi câu trên màn hình: bấm 1 lần = ✓ đã từng, 2 lần = ✗ chưa từng.</p>
+    <div class="ticks" id="ticks"></div>
+    <div class="row" style="font-size:14px"><span id="tick-count"></span><label for="sat" style="margin-left:auto">Em ngồi xuống ở câu số</label><input id="sat" data-k="sat" type="number" inputmode="numeric" min="1" max="20" style="width:80px"></div>
+    <div id="B1p1"></div>
+  </div>
+  <div class="card"><h3>Phần 2 · thời gian + 了</h3><div id="B1p2"></div></div>
+  <div class="card"><h3>Phần 3 · báo cáo về lớp</h3><div id="B1p3"></div></div>
+</section>
+
+<section class="sec" data-id="B2" data-label="B2">
+  <div class="sec-h"><div class="k"><span class="tag y">Tiết 2</span><span>1,5 điểm</span></div><h2>B2 · 程度副詞 · Mức độ 1–5</h2><p>Mỗi câu cô hiện, chọn mức đúng với em. Sau đó viết 2 câu có phó từ.</p></div>
+  <div class="scale-k"><div><b>1</b><span>一點也不</span></div><div><b>2</b><span>不太</span></div><div><b>3</b><span>有一點/比較</span></div><div><b>4</b><span>很</span></div><div><b>5</b><span>非常</span></div></div>
+  <div class="card" id="B2"></div>
+  <div class="card"><div class="field"><label for="b2s1">Câu 1 (ví dụ: 我有一點害怕狗。)</label><input id="b2s1" class="zhin" data-k="b2s1"></div>
+    <div class="field"><label for="b2s2">Câu 2</label><input id="b2s2" class="zhin" data-k="b2s2"></div></div>
+</section>
+
+<section class="sec" data-id="C1" data-label="C1">
+  <div class="sec-h"><div class="k"><span class="tag b">Tiết 3</span><span>1 điểm</span></div><h2>C1 · 在臺灣的三個月</h2><p>Hỏi bạn ngồi cạnh, gõ câu trả lời của bạn.</p></div>
+  <div class="card"><div class="field"><label for="c1who">Tên bạn em phỏng vấn</label><input id="c1who" data-k="c1who"></div></div>
+  <div class="card" id="C1"></div>
+  <div class="card"><h3>Kể lại về bạn</h3>
+    <div class="field"><label for="c1r1">他／她在臺灣…過…，在越南從來沒…過。</label><input id="c1r1" class="zhin" data-k="c1r1"></div>
+    <div class="field"><label for="c1r2">沒想到…。他／她覺得臺灣和越南最大的不同是…。</label><input id="c1r2" class="zhin" data-k="c1r2"></div></div>
+</section>
+
+<section class="sec" data-id="C2" data-label="C2 ✍" data-hand="1">
+  <div class="sec-h"><div class="k"><span class="tag b">Tiết 4</span><span>1,5 điểm</span></div><h2>C2 · 我的報告</h2><p>Chủ đề theo số thứ tự của em. Bước 1 gõ trên web, bước 2 viết vào tập.</p></div>
+  <div class="topics" id="topics"></div>
+  <div class="card" id="C2"></div>
+  <div class="card hand"><span class="big">✍ Bước 2 · Viết đoạn văn vào tập</span>
+    <div class="zh" style="font-size:16px">大家好，我叫…。我的題目是「…」。（câu 1–3）。還有，（câu 4–5）。沒想到…！謝謝大家！</div>
+    <div style="font-size:14px">Dùng ít nhất 2 cấu trúc: V過 · thời gian + 了 · 從來沒V過 · 有一點/很/非常 · 沒想到. Viết xong, đánh dấu những cấu trúc em đã dùng:</div>
+    <div class="row" id="c2st"></div>
+    <label class="row"><input type="checkbox" data-k="c2_done" style="width:22px;height:22px"><span>Em đã viết xong đoạn văn vào tập</span></label></div>
+</section>
+
+<section class="sec" data-id="C3" data-label="C3">
+  <div class="sec-h"><div class="k"><span class="tag b">Tiết 5</span><span>0,5 điểm</span></div><h2>C3 · 聽報告</h2><p>Nghe các bạn báo cáo, ghi lại 2 bạn.</p></div>
+  <div class="card" id="C3"></div>
+</section>
+
+<section class="sec" data-id="D1" data-label="D1 ✍" data-hand="1">
+  <div class="sec-h"><div class="k"><span class="tag y">Tiết 6</span><span class="tag r">✍ Viết vào tập</span><span>1 điểm</span></div><h2>D1 · 聽寫 10 từ</h2><p>Cô đọc mỗi từ 2 lần. Em viết <b>chữ phồn thể</b> vào tập, đánh số 1–10. Không gõ trên web.</p></div>
+  <div class="card hand"><span class="big">✍ Viết trong tập, đánh số 1 → 10</span>
+    <div>Cô hiện đáp án xong, em tự chữa bằng bút màu và ghi số câu đúng vào ô dưới đây.</div>
+    <div class="field"><label for="d1">Số từ em viết đúng (0–10)</label><input id="d1" data-k="d1" type="number" inputmode="numeric" min="0" max="10" style="max-width:120px"></div></div>
+</section>
+
+<section class="sec" data-id="D2" data-label="D2">
+  <div class="sec-h"><div class="k"><span class="tag y">Tiết 6</span><span>0,5 điểm</span></div><h2>D2 · 賓果 Bingo</h2><p id="bg-help">Bấm 9 từ bên dưới để xếp vào bảng. Bấm vào ô để xoá nếu chọn nhầm.</p></div>
+  <div class="bgrid" id="bgrid"></div>
+  <div class="bingo-msg" id="bg-msg" hidden>賓果！</div>
+  <div class="card" id="bg-pickwrap"><div class="wpick" id="bg-pick"></div></div>
+  <div class="row"><button class="btn" id="bg-start" disabled>Bắt đầu chơi</button><button class="btn ghost" id="bg-reset">Làm lại bảng</button></div>
+</section>
+
+<section class="sec" data-id="D3" data-label="D3">
+  <div class="sec-h"><div class="k"><span class="tag y">Tiết 6</span><span>0,5 điểm</span></div><h2>D3 · 我會了嗎？</h2><p>Tự đánh giá thật lòng.</p></div>
+  <div class="card sa" id="D3"></div>
+  <div class="card"><div class="field"><label for="d3q">Hôm nay em còn chưa hiểu điều gì? (viết tiếng Việt cũng được)</label><textarea id="d3q" data-k="d3q"></textarea></div></div>
+</section>
+
+<section class="sec" data-id="out" data-label="Nộp bài">
+  <div class="sec-h"><div class="k"><span class="tag r">Cuối buổi</span></div><h2>Nộp bài</h2><p>Kiểm tra các phần còn thiếu, rồi bấm <b>Sao chép kết quả</b> và dán vào nơi cô yêu cầu (nhóm LINE lớp…). Mang tập lên để cô kiểm tra 3 phần ✍.</p></div>
+  <div class="card" id="missing"></div>
+  <div class="row"><button class="btn red" id="copy">Sao chép kết quả</button><span class="saved" id="copied" aria-live="polite"></span></div>
+  <textarea id="out" readonly aria-label="Kết quả bài làm"></textarea>
+  <button class="btn ghost" id="wipe">Xoá toàn bộ bài làm trên máy này</button>
+  <div class="card" id="wipe-confirm" hidden><b>Xoá hết bài đã làm?</b><div class="row"><button class="btn red" id="wipe-yes">Xoá</button><button class="btn ghost" id="wipe-no">Không</button></div></div>
+</section>
+
+</main>
+
+<footer class="bot"><div class="in">
+  <button class="btn ghost" id="prev">‹ Trước</button>
+  <div class="mid"><span id="pos"></span><br><span class="saved" id="savedmsg"></span></div>
+  <button class="btn" id="next">Tiếp ›</button>
+</div></footer>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const KEY="b1-phieu-v1";
+let st={};try{st=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(e){st={}}
+let saveT=null;
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st));$("#savedmsg").textContent="Đã lưu"}catch(e){$("#savedmsg").textContent="Không lưu được trên máy này"}clearTimeout(saveT);saveT=setTimeout(()=>{$("#savedmsg").textContent=""},1500);updateDone()}
+
+/* ---------- data ---------- */
+const VOC=[["chūshēng","sinh ra"],["mǔyǔ","tiếng mẹ đẻ"],["niánjì","tuổi tác"],["fùmǔ","bố mẹ"],["xiōngdì","anh em trai"],["shēngāo","chiều cao"],["zhǎngdà","lớn lên"],["rènzhēn","chăm chỉ"],["hàixiū","ngại ngùng"],["kāixīn","vui vẻ"],["dānxīn","lo lắng"],["hàipà","sợ"],["xīnqíng","tâm trạng"],["bùtóng","khác nhau"],["gāngcái","vừa nãy"],["bànyè","nửa đêm"],["cónglái","từ trước đến nay"],["dàgài","khoảng, chắc là"],["jiéguǒ","rốt cuộc"],["méi xiǎngdào","không ngờ"]];
+const ZH=["出生","母語","年紀","父母","兄弟","身高","長大","認真","害羞","開心","擔心","害怕","心情","不同","剛才","半夜","從來","大概","結果","沒想到"];
+const K=["你是哪一年來臺灣的？","你來臺灣多久了？","你在中山工商念什麼科？","你們班大概有多少個同學？","你們班的同學是從哪裡來的？","臺灣的學校和越南的學校有什麼不同？","上課的時候，你害羞嗎？你敢問老師問題嗎？","你最擔心哪一門課？為什麼？","你在臺灣打過工嗎？在哪裡？","在臺灣，什麼事讓你最開心？"];
+const BANK=["出生","母語","年紀","兄弟","害羞","害怕","擔心","從來","認真","開心","長大","半夜"];
+const A=[["我是二〇〇九年","的。","出生"],["我的","是越南語。","母語"],["我哥哥的","比我大，他今年十九歲。","年紀"],["我有兩個","，他們都在越南。","兄弟"],["她很","，第一次見面的時候臉都紅了。","害羞"],["我妹妹很","狗，看見狗就跑。","害怕"],["媽媽很","我，常常打電話問我好不好。","擔心"],["我","沒去過臺北。","從來"]];
+const B1=[[["我…過…","我…過…","我從來沒…過…"]],[["來臺灣 → 我來臺灣…了。","學中文 → 我學中文學了…了。","住在宿舍 / 在中山工商念書 / 打工 →"]],[["有的…，有的…","十幾 / 二十多個同學…","都… / 沒有人…"]]];
+const B2=["你害羞嗎？","你上課認真嗎？","你今天開心嗎？","你擔心考試嗎？","你害怕狗嗎？","你覺得中文難嗎？","你覺得高雄熱嗎？","你覺得上課累嗎？"];
+const C1=["來臺灣以後，你做過什麼在越南從來沒做過的事？","這三個月，什麼事讓你最沒想到？","你在臺灣吃過最奇怪的東西是什麼？好吃嗎？","你覺得臺灣的生活和越南的生活，最大的不同是什麼？","這三個月，你最開心的一天是哪一天？那天你做了什麼？"];
+const TOP=[["給新僑生的建議","Lời khuyên cho 僑生 khóa sau"],["三個月前的我","Em của 3 tháng trước và bây giờ"],["我眼中的臺灣","Đài Loan trong mắt em"],["如果我是校長","Nếu em là hiệu trưởng"],["我的完美週末","Cuối tuần hoàn hảo với 1000 塊"],["十年後的我","Em của 10 năm sau"]];
+const QS=[["來臺灣以前，新同學應該準備什麼？","在臺灣，什麼事一定不能做？","你最想介紹哪一個好吃又便宜的東西？","哪一句中文，新同學一定要會說？","新同學最可能擔心什麼？你會跟他說什麼？","你來臺灣以後才知道的事是什麼？"],
+["三個月前，你最害怕什麼？現在呢？","三個月前，你會說哪些中文？現在呢？","你剛來的時候，做過什麼好笑的事？","你的生活有什麼不同了？","有什麼事你以前從來沒做過，現在常常做？","你想跟三個月前的自己說什麼？"],
+["臺灣人的什麼習慣讓你最沒想到？","臺灣和越南有什麼不同，你最喜歡？","有什麼不同，你到現在還不習慣？","你覺得臺灣人害羞嗎？為什麼？","你在臺灣見過最奇怪的東西是什麼？","如果臺灣朋友去越南，他們會覺得什麼最奇怪？"],
+["如果你是中山工商的校長，你最想改什麼？","你覺得學生幾點開始上課最好？","上課的時候可以用手機嗎？為什麼？","哪一門課你覺得不用上？為什麼？","你會給僑生什麼幫助？","你覺得當校長累不累？為什麼？"],
+["如果你有一千塊和一個週末，你想做什麼？","你想跟誰一起去？","你想去哪裡？你去過那裡嗎？","你要吃什麼、喝什麼？","你會幾點起床、幾點睡覺？","這個週末和你平常的週末有什麼不同？"],
+["十年後，你住在哪裡？","十年後，你在做什麼工作？","那時候你會說幾種語言？","你還會記得你的中文老師嗎？","那時候，你最擔心什麼？","你想跟十年後的自己說什麼？"]];
+const STRUCT=["V過","thời gian + 了","從來沒V過","有一點/很/非常","沒想到"];
+const D3=["Hỏi và trả lời 你V過…嗎？","Nói em ở Đài Loan / học tiếng Trung bao lâu","Dùng 不太 / 有一點 / 很 / 非常","Nói một đoạn 1 phút về bản thân"];
+const D3O=["會 Được","還好 Tạm","還不會 Chưa"];
+
+/* ---------- render ---------- */
+$("#vl").innerHTML=VOC.map((v,i)=>`<div><i>${i+1}</i><b>${v[0]}</b><span>${v[1]}</span></div>`).join("");
+$("#K").innerHTML=K.map((q,i)=>`<div class="field"><label for="k${i}" class="q">${i+1}. ${q}</label><input id="k${i}" class="zhin" data-k="k${i}"></div>`).join("");
+$("#A").innerHTML=A.map((a,i)=>`<div class="fill">${i+1}. ${a[0]}<select id="a${i}" data-k="a${i}" aria-label="Chỗ trống câu ${i+1}"><option value="">——</option>${BANK.map(w=>`<option>${w}</option>`).join("")}</select>${a[1]}<span class="mark" id="am${i}"></span></div>`).join("");
+const p=(id,arr,pre)=>$(id).innerHTML=arr.map((h,i)=>`<div class="field"><label for="${pre}${i}">${i+1}. ${esc(h)}</label><input id="${pre}${i}" class="zhin" data-k="${pre}${i}"></div>`).join("");
+p("#B1p1",B1[0][0],"b1a");p("#B1p2",B1[1][0],"b1b");p("#B1p3",B1[2][0],"b1c");
+$("#ticks").innerHTML=Array.from({length:20},(_,i)=>`<button type="button" data-t="${i}" aria-label="Câu ${i+1}">${i+1}<small>—</small></button>`).join("");
+$("#B2").innerHTML=B2.map((q,i)=>`<div class="srow"><div class="q">${i+1}. ${q}</div><div class="pills" role="group" aria-label="Mức độ câu ${i+1}">${[1,2,3,4,5].map(n=>`<button type="button" data-s="${i}" data-v="${n}" aria-pressed="false">${n}</button>`).join("")}</div></div>`).join("");
+$("#C1").innerHTML=C1.map((q,i)=>`<div class="field"><label for="c1${i}" class="q">${i+1}. ${q}</label><input id="c1${i}" class="zhin" data-k="c1_${i}"></div>`).join("");
+$("#topics").innerHTML=TOP.map((t,i)=>`<button type="button" data-tp="${i}" aria-pressed="false"><b>${i+1} · ${t[0]}</b><span>${t[1]}</span></button>`).join("");
+$("#c2st").innerHTML=STRUCT.map((s,i)=>`<label class="row" style="gap:4px;font-size:14px"><input type="checkbox" data-k="c2s${i}" style="width:20px;height:20px">${s}</label>`).join("");
+$("#C3").innerHTML=[0,1].map(i=>`<div class="grid2"><div class="field"><label for="c3n${i}">Bạn ${i+1}: tên</label><input id="c3n${i}" data-k="c3n${i}"></div><div class="field"><label for="c3t${i}">Chủ đề</label><input id="c3t${i}" class="zhin" data-k="c3t${i}"></div></div><div class="field"><label for="c3s${i}">他／她說…</label><input id="c3s${i}" class="zhin" data-k="c3s${i}"></div>`).join('<hr style="border:0;border-top:1px solid var(--line);width:100%">');
+$("#D3").innerHTML=D3.map((d,i)=>`<div class="row" style="display:grid"><div>${esc(d)}</div><div class="opts">${D3O.map((o,j)=>`<button type="button" data-d3="${i}" data-v="${j}" aria-pressed="false">${o}</button>`).join("")}</div></div>`).join("");
+
+/* ---------- generic inputs ---------- */
+$$("input.zhin").forEach(el=>{if(!el.placeholder)el.placeholder="✎ Gõ câu của em ở đây…"});
+$$("[data-k]").forEach(el=>{
+  const k=el.dataset.k;
+  if(el.type==="checkbox"){el.checked=!!st[k];el.addEventListener("change",()=>{st[k]=el.checked;save()})}
+  else{if(st[k]!=null)el.value=st[k];el.addEventListener("input",()=>{st[k]=el.value;save()})}
+});
+
+/* ---------- ticks ---------- */
+st.ticks=st.ticks||Array(20).fill(0);
+function drawTicks(){$$("[data-t]").forEach(b=>{const v=st.ticks[+b.dataset.t];b.className=v===1?"y":v===2?"n":"";b.querySelector("small").textContent=v===1?"✓":v===2?"✗":"—"});
+  const y=st.ticks.filter(v=>v===1).length,n=st.ticks.filter(v=>v===2).length;$("#tick-count").textContent=`Đã từng: ${y} · Chưa từng: ${n}`}
+$$("[data-t]").forEach(b=>b.onclick=()=>{const i=+b.dataset.t;st.ticks[i]=(st.ticks[i]+1)%3;drawTicks();save()});drawTicks();
+
+/* ---------- B2 pills ---------- */
+st.b2=st.b2||Array(8).fill(0);
+function drawB2(){$$("[data-s]").forEach(b=>b.setAttribute("aria-pressed",st.b2[+b.dataset.s]===+b.dataset.v?"true":"false"))}
+$$("[data-s]").forEach(b=>b.onclick=()=>{st.b2[+b.dataset.s]=+b.dataset.v;drawB2();save()});drawB2();
+
+/* ---------- C2 topics ---------- */
+function drawTopic(){const t=st.topic;$$("[data-tp]").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.tp===t?"true":"false"));
+  if(t==null){$("#C2").innerHTML='<div style="color:var(--muted)">Chọn chủ đề ở trên. Số thứ tự 1, 7, 13… → chủ đề 1; 2, 8, 14… → chủ đề 2…</div>';return}
+  $("#C2").innerHTML='<h3>Bước 1 · Trả lời 6 câu</h3>'+QS[t].map((q,i)=>`<div class="field"><label for="c2q${i}" class="q">${i+1}. ${q}</label><input id="c2q${i}" class="zhin" data-c2="${i}" value="${esc((st.c2&&st.c2[t]&&st.c2[t][i])||"")}"></div>`).join("");
+  $$("[data-c2]").forEach(el=>el.addEventListener("input",()=>{st.c2=st.c2||{};st.c2[t]=st.c2[t]||[];st.c2[t][+el.dataset.c2]=el.value;save()}))}
+$$("[data-tp]").forEach(b=>b.onclick=()=>{st.topic=+b.dataset.tp;drawTopic();save()});
+if(st.topic==null&&+st.no){st.topic=(+st.no-1)%6}
+drawTopic();
+$("#no").addEventListener("input",()=>{if(+$("#no").value&&st.topic==null){st.topic=(+$("#no").value-1)%6;drawTopic();save()}});
+
+/* ---------- A check ---------- */
+function drawA(){const locked=!!st.aLocked;$$("#A select").forEach(s=>s.disabled=locked);$("#A-check").disabled=locked;
+  if(!locked){A.forEach((_,i)=>$("#am"+i).textContent="");$("#A-score").textContent="";return}
+  let ok=0;A.forEach((a,i)=>{const r=(st["a"+i]||"")===a[2];if(r)ok++;const m=$("#am"+i);m.className="mark "+(r?"ok":"no");m.textContent=r?"✓":"✗ "+a[2]});
+  $("#A-score").textContent=`Đúng ${ok}/8 → ${(ok*0.25).toFixed(2).replace(".",",")} / 2 điểm`}
+$("#A-check").onclick=()=>{const empty=A.filter((_,i)=>!st["a"+i]).length;if(empty&&!$("#A-check").dataset.warn){$("#A-score").textContent=`Còn ${empty} câu chưa chọn. Bấm lần nữa để vẫn kiểm tra.`;$("#A-check").dataset.warn="1";return}st.aLocked=true;drawA();save()};
+drawA();
+
+/* ---------- bingo ---------- */
+st.bg=st.bg||Array(9).fill("");st.bgMarks=st.bgMarks||Array(9).fill(false);
+const LINES=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+function drawBingo(){const playing=!!st.bgPlay;
+  $("#bgrid").innerHTML=st.bg.map((w,i)=>`<button type="button" data-b="${i}" class="${w?"":"empty"} ${st.bgMarks[i]?"hit":""}">${w?esc(w):"ô "+(i+1)}</button>`).join("");
+  const lines=LINES.filter(l=>l.every(i=>st.bgMarks[i]));lines.flat().forEach(i=>$(`[data-b="${i}"]`).classList.add("line"));
+  $("#bg-msg").hidden=!lines.length;$("#bg-msg").textContent=lines.length?`賓果！ ${lines.length} hàng`:"";
+  $("#bg-pickwrap").hidden=playing;$("#bg-start").hidden=playing;
+  $("#bg-help").textContent=playing?"Cô hiện nghĩa tiếng Việt: em có từ đó thì bấm vào ô để khoanh. Đủ 1 hàng thì hô 賓果！":"Bấm 9 từ bên dưới để xếp vào bảng. Bấm vào ô để xoá nếu chọn nhầm.";
+  $("#bg-pick").innerHTML=ZH.map(w=>`<button type="button" data-w="${w}" ${st.bg.includes(w)?"disabled":""}>${w}</button>`).join("");
+  $("#bg-start").disabled=st.bg.some(w=>!w);
+  $$("[data-w]").forEach(b=>b.onclick=()=>{const i=st.bg.indexOf("");if(i<0)return;st.bg[i]=b.dataset.w;drawBingo();save()});
+  $$("[data-b]").forEach(b=>b.onclick=()=>{const i=+b.dataset.b;if(playing){if(st.bg[i]){st.bgMarks[i]=!st.bgMarks[i]}}else{st.bg[i]=""}drawBingo();save()});
+}
+$("#bg-start").onclick=()=>{st.bgPlay=true;drawBingo();save()};
+$("#bg-reset").onclick=()=>{st.bg=Array(9).fill("");st.bgMarks=Array(9).fill(false);st.bgPlay=false;drawBingo();save()};
+drawBingo();
+
+/* ---------- D3 ---------- */
+st.d3=st.d3||Array(4).fill(null);
+function drawD3(){$$("[data-d3]").forEach(b=>b.setAttribute("aria-pressed",st.d3[+b.dataset.d3]===+b.dataset.v?"true":"false"))}
+$$("[data-d3]").forEach(b=>b.onclick=()=>{st.d3[+b.dataset.d3]=+b.dataset.v;drawD3();save()});drawD3();
+
+/* ---------- completion ---------- */
+const filled=k=>(st[k]||"").toString().trim()!=="";
+const DONE={
+  info:()=>filled("name")&&filled("no"),
+  vocab:()=>!!st.vocab_done,
+  K:()=>K.every((_,i)=>filled("k"+i)),
+  A:()=>!!st.aLocked,
+  B1:()=>st.ticks.every(v=>v)&&[0,1,2].every(i=>filled("b1a"+i)&&filled("b1b"+i)&&filled("b1c"+i)),
+  B2:()=>st.b2.every(v=>v)&&filled("b2s1")&&filled("b2s2"),
+  C1:()=>C1.every((_,i)=>filled("c1_"+i))&&filled("c1r1")&&filled("c1r2"),
+  C2:()=>st.topic!=null&&st.c2&&st.c2[st.topic]&&QS[st.topic].every((_,i)=>(st.c2[st.topic][i]||"").trim())&&!!st.c2_done,
+  C3:()=>[0,1].every(i=>filled("c3n"+i)&&filled("c3s"+i)),
+  D1:()=>filled("d1"),
+  D2:()=>st.bg.every(w=>w),
+  D3:()=>st.d3.every(v=>v!=null),
+  out:()=>false
+};
+const secs=$$(".sec");let cur=0;
+$("#chips").innerHTML=secs.map((s,i)=>`<button type="button" data-go="${i}">${esc(s.dataset.label)}</button>`).join("");
+$$("[data-go]").forEach(b=>b.onclick=()=>go(+b.dataset.go));
+function updateDone(){let n=0,t=0;secs.forEach((s,i)=>{const id=s.dataset.id;if(id==="out")return;t++;const d=DONE[id]();if(d)n++;$(`[data-go="${i}"]`).classList.toggle("done",d)});$("#prog").textContent=`Xong ${n}/${t} phần`;if(secs[cur].dataset.id==="out")buildOut()}
+function go(i){cur=Math.max(0,Math.min(secs.length-1,i));secs.forEach((s,j)=>s.hidden=j!==cur);$$("[data-go]").forEach(b=>b.setAttribute("aria-current",+b.dataset.go===cur?"true":"false"));
+  $(`[data-go="${cur}"]`).scrollIntoView({inline:"center",block:"nearest"});window.scrollTo(0,0);
+  $("#pos").textContent=`${cur+1} / ${secs.length}`;$("#prev").disabled=cur===0;$("#next").disabled=cur===secs.length-1;
+  if(secs[cur].dataset.id==="out")buildOut();try{localStorage.setItem(KEY+"-sec",cur)}catch(e){}}
+$("#prev").onclick=()=>go(cur-1);$("#next").onclick=()=>go(cur+1);
+
+/* ---------- output ---------- */
+function v(k){return (st[k]||"").toString().trim()||"(trống)"}
+function buildOut(){
+  const miss=secs.filter(s=>s.dataset.id!=="out"&&!DONE[s.dataset.id]()).map(s=>s.dataset.label);
+  $("#missing").innerHTML=miss.length?`<b style="color:var(--red)">Còn thiếu: ${miss.map(esc).join(" · ")}</b>`:`<b style="color:var(--green)">Em đã làm đủ các phần.</b>`;
+  let aOk=0;A.forEach((a,i)=>{if((st["a"+i]||"")===a[2])aOk++});
+  const L=[];
+  L.push(`【Phiếu Buổi 1 · 我們這一班】`,`Họ tên: ${v("name")} · Số: ${v("no")} · Lớp: ${v("cls")}`,``);
+  L.push(`生詞 ✍ chép vào tập: ${st.vocab_done?"đã xong":"chưa"}`);
+  L.push(``,`K · 熱身`);K.forEach((q,i)=>L.push(`${i+1}. ${v("k"+i)}`));
+  L.push(``,`A · ${st.aLocked?`đúng ${aOk}/8 = ${(aOk*0.25).toFixed(2)} điểm`:"CHƯA KIỂM TRA"}`);A.forEach((a,i)=>L.push(`${i+1}. ${st["a"+i]||"—"}${st.aLocked?((st["a"+i]||"")===a[2]?" ✓":" ✗"):""}`));
+  L.push(``,`B1 · Phần 1: đã từng ${st.ticks.filter(x=>x===1).length}/20, ngồi xuống ở câu ${v("sat")}`);[0,1,2].forEach(i=>L.push(`  ${i+1}. ${v("b1a"+i)}`));
+  L.push(`B1 · Phần 2`);[0,1,2].forEach(i=>L.push(`  ${i+1}. ${v("b1b"+i)}`));
+  L.push(`B1 · Phần 3`);[0,1,2].forEach(i=>L.push(`  ${i+1}. ${v("b1c"+i)}`));
+  L.push(``,`B2 · Mức độ: ${st.b2.map((x,i)=>`${i+1}=${x||"—"}`).join(" ")}`,`  1. ${v("b2s1")}`,`  2. ${v("b2s2")}`);
+  L.push(``,`C1 · Phỏng vấn: ${v("c1who")}`);C1.forEach((q,i)=>L.push(`  ${i+1}. ${v("c1_"+i)}`));L.push(`  Kể lại: ${v("c1r1")} ${v("c1r2")}`);
+  const t=st.topic;L.push(``,`C2 · Chủ đề: ${t!=null?(t+1)+" "+TOP[t][0]:"(chưa chọn)"}`);
+  if(t!=null)QS[t].forEach((q,i)=>L.push(`  ${i+1}. ${((st.c2&&st.c2[t]&&st.c2[t][i])||"").trim()||"(trống)"}`));
+  L.push(`  ✍ Đoạn văn trong tập: ${st.c2_done?"đã viết":"chưa"} · Cấu trúc đã dùng: ${STRUCT.filter((_,i)=>st["c2s"+i]).join(", ")||"(chưa đánh dấu)"}`);
+  L.push(``,`C3`);[0,1].forEach(i=>L.push(`  ${v("c3n"+i)} (${v("c3t"+i)}): ${v("c3s"+i)}`));
+  L.push(``,`D1 ✍ 聽寫: tự chữa đúng ${v("d1")}/10`);
+  L.push(`D2 · Bingo: ${st.bg.map(w=>w||"_").join(" ")} · ${LINES.filter(l=>l.every(i=>st.bgMarks[i])).length} hàng`);
+  L.push(`D3 · ${D3.map((d,i)=>`${i+1}=${st.d3[i]!=null?D3O[st.d3[i]].split(" ")[0]:"—"}`).join(" ")}`,`  Chưa hiểu: ${v("d3q")}`);
+  $("#out").value=L.join("\n");
+}
+$("#copy").onclick=()=>{buildOut();const t=$("#out").value;const fb=()=>{$("#out").focus();$("#out").select();$("#copied").textContent="Đã bôi đen, nhấn giữ để sao chép"};
+  try{navigator.clipboard.writeText(t).then(()=>{$("#copied").textContent="Đã sao chép. Dán vào nhóm LINE lớp."},fb)}catch(e){fb()}};
+$("#wipe").onclick=()=>{$("#wipe-confirm").hidden=false};$("#wipe-no").onclick=()=>{$("#wipe-confirm").hidden=true};
+$("#wipe-yes").onclick=()=>{try{localStorage.removeItem(KEY)}catch(e){}location.reload()};
+
+updateDone();
+let startSec=0;try{startSec=+localStorage.getItem(KEY+"-sec")||0}catch(e){}
+go(startSec);
+</script>
